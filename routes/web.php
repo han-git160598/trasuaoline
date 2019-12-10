@@ -47,3 +47,6 @@ Route::post('/update-product/{product_id}','ProductController@update_product');
 
 //gio hang
 Route::post('/save-cart','Cartcontroller@save_cart');
+Route::get('/show-cart','Cartcontroller@show_cart');
+Route::get('/delete-cart/{rowId}','Cartcontroller@delete_cart');
+
