@@ -33,18 +33,23 @@
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
 								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>{{$details->product_name}}</details></h2>
+								<h2>{{$details->product_name}}</h2>
 								<p>ID: {{$details->product_id}}</p>
 								<img src="images/product-details/rating.png" alt="" />
+
+								<form action="{{URL::to('/save-cart')}}" method="POST">	
+									{{csrf_field()}}
 								<span>
 									<span>{{($details->product_price).'VND'}} </span>
 									<label>Quantity:</label>
-									<input type="number" min="1 " value="1" />
-									<button type="button" class="btn btn-fefault cart">
+									<input name="qty" type="number" min="1 " value="1" />
+									<input name="product_id_hidden" type="hidden" value=" {{$details->product_id}}" />
+									<button type="submit" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i>
 										Thêm giỏ hàng
 									</button>
 								</span>
+								</form>
 								<p><b>Tình trạng:</b>Còn hàng</p>
 								<p><b>Condition:</b> New</p>
 								<p><b>Danh mục:</b> {{$details->category_name}}</p>
