@@ -35,7 +35,6 @@ class ProductController extends Controller
     	$data= array();
     	$data['product_name']=$request->product_name;
         $data['category_id']=$request->cate_product;
-    	$data['product_desc']=$request->product_desc;
         $data['product_price']=$request->product_price;
         $data['product_content']=$request->product_content; 
     	$data['product_status']=$request->product_status;
@@ -72,7 +71,6 @@ class ProductController extends Controller
         $data= array();
         $data['product_name']=$request->product_name;
         $data['category_id']=$request->cate_product;
-        $data['product_desc']=$request->product_desc;
         $data['product_price']=$request->product_price;
         $data['product_content']=$request->product_content; 
         $data['product_status']=$request->product_status;
@@ -99,7 +97,7 @@ class ProductController extends Controller
     {    
 
         DB::table('tbl_product')->where('product_id',$product_id)->delete();
-        session::put('message','Xóa san pham thành công');
+        session::put('message','Xóa sản phẩm thành công');
         return Redirect::to('/all-product');
     }
     //customer pages

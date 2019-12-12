@@ -15,11 +15,11 @@
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">san pham</td>
+							<td class="image">Sản phẩm</td>
 							<td class="description"></td>
-							<td class="price">Gia</td>
-							<td class="quantity">so luong</td>
-							<td class="total">tong tien</td>
+							<td class="price">Giá</td>
+							<td class="quantity">Số lượng</td>
+							<td class="total">Tổng tiền</td>
 							<td></td>
 						</tr>
 					</thead>
@@ -125,9 +125,9 @@
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<li>Tong <span>{{Cart::total()}}</span></li>
+							<li>Tổng <span>{{Cart::total()}}</span></li>
 							<li>ship<span>Free</span></li>
-							<li>Thanh tien<span>{{Cart::total()}}</span></li>
+							<li>Thành tiền<span>{{Cart::total()}}</span></li>
 						</ul>
 							<a class="btn btn-default update" href="">Update</a>
 							<a class="btn btn-default check_out" href="">Check Out</a>

@@ -1,5 +1,4 @@
- <?php
-
+<?php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -27,7 +26,6 @@ class CategoryProduct extends Controller
     {
     	$data= array();
     	$data['category_name']=$request->category_product_name;
-    	$data['category_desc']=$request->category_product_desc;
     	$data['category_status']=$request->category_product_status;
     	DB::table('tbl_category_product')->insert($data);
         session::put('message','Thêm danh mục thành công');
@@ -44,7 +42,6 @@ class CategoryProduct extends Controller
     {
         $data=array();
         $data['category_name']=$request->category_product_name;
-        $data['category_desc']=$request->category_product_desc;
         $data['category_status']=$request->category_product_status;
 
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->update($data);

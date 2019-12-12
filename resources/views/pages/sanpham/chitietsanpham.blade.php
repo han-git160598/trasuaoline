@@ -65,18 +65,13 @@
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
 								<li class="active"><a href="#details" data-toggle="tab">Chi tiết</a></li>
-								<li ><a href="#$companyprofile" data-toggle="tab">Mô tả</a></li>
 								<li><a href="#reviews" data-toggle="tab">Đánh giá (5)</a></li>
 							</ul>
 						</div>
 						<div class="tab-content">
 							<div class="tab-pane fade active in" id="details" >
 								<p>{{$details->product_content}}</p>	
-							</div>
-							<div class="tab-pane fade" id="companyprofile" >
-								<p>{{$details->product_desc}}</p>	
-							</div>
-	
+							</div>			
 							
 							<div class="tab-pane fade" id="reviews" >
 								<div class="col-sm-12">
