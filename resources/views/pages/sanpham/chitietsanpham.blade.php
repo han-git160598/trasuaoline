@@ -1,10 +1,10 @@
 @extends('welcome')
 @section('content')
-@foreach($product_details as $key=>$details)
-<div class="product-details"><!--product-details-->
+@foreach($chitiet_sanpham as $key=> $ct)
+<div class="product-details">
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="{{URL::to('public/upload/product/'.$details->product_image)}}" alt="" />
+								<img src="{{URL::to('public/upload/product/'.$ct->hinh_sanpham)}}" alt="" />
 								<h3>ZOOM</h3>
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -20,7 +20,7 @@
 										
 									</div>
 
-								  <!-- Controls -->
+								 <!--  Controls -->
 								  <a class="left item-control" href="#similar-product" data-slide="prev">
 									<i class="fa fa-angle-left"></i>
 								  </a>
@@ -31,37 +31,44 @@
 
 						</div>
 						<div class="col-sm-7">
-							<div class="product-information"><!--/product-information-->
+							<div class="product-information">
 								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>{{$details->product_name}}</h2>
-								<p>ID: {{$details->product_id}}</p>
+								<h2>{{$ct->ten_sanpham}}</h2>
+								<p>ID: {{$ct->ma_sanpham}}</p>
 								<img src="images/product-details/rating.png" alt="" />
 
-								<form action="{{URL::to('/save-cart')}}" method="POST">	
+								<form action="{{URL::to('/save-gio-hang')}}" method="POST">	
 									{{csrf_field()}}
 								<span>
-									<span>{{($details->product_price).'VND'}} </span>
-									<label>Quantity:</label>
-									<input name="qty" type="number" min="1 " value="1" />
-									<input name="product_id_hidden" type="hidden" value=" {{$details->product_id}}" />
+									<span>{{($ct->gia_sanpham).'VND'}} </span>
+									<label>Số lượng:</label>
+									<input name="qty" type="number" min="1" value="1" />
+									<input name="product_id_hidden" type="hidden" value=" {{$ct->ma_sanpham}}" />
 									<button type="submit" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i>
 										Thêm giỏ hàng
 									</button>
 								</span>
 								</form>
-								<p><b>Tình trạng:</b>Còn hàng</p>
+								<p><b>Tình trạng:</b>
+								<?php
+                				if($ct->trangthai_sanpham==0)
+                				{
+                  					echo 'Còn hàng';
+                				}else
+                  					echo 'Hết hàng'; 
+             					 ?></p>
 								<p><b>Condition:</b> New</p>
-								<p><b>Danh mục:</b> {{$details->category_name}}</p>
+								<p><b>Danh mục:</b> {{$ct->ten_loai}}</p>
 								
 								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
-							</div><!--/product-information-->
+							</div>
 						</div>
 					</div>
 
 
 
-						<div class="category-tab shop-details-tab"> <!--category-tab-->
+						<div class="category-tab shop-details-tab"> <!-- category-tab -->
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
 								<li class="active"><a href="#details" data-toggle="tab">Chi tiết</a></li>
@@ -70,7 +77,7 @@
 						</div>
 						<div class="tab-content">
 							<div class="tab-pane fade active in" id="details" >
-								<p>{{$details->product_content}}</p>	
+								<p>{{$ct->noidung_sanpham}}</p>	
 							</div>			
 							
 							<div class="tab-pane fade" id="reviews" >
@@ -98,11 +105,11 @@
 							</div>
 							
 						</div>
-					</div>
+											</div>
 @endforeach
 
 
-					<div class="recommended_items"><!--recommended_items-->
+					<div class="recommended_items"><!-- recommended_items -->
 						<h2 class="title text-center">Sản phẩm gọi ý</h2>
 						
 						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
@@ -196,7 +203,7 @@
 							  </a>			
 						</div>
 
-					</div><!--/recommended_items-->
+					</div><!-- /recommended_items -->
 
 
 					

@@ -4,8 +4,8 @@
 		<div class="container">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="{{URL::to('/trang-chu')}}">Trang chu</a></li>
-				  <li class="active">Gio hang</li>
+				  <li><a href="{{URL::to('/trang-chu')}}">Trang chủ</a></li>
+				  <li class="active">Giỏ hàng</li>
 				</ol>
 			</div>
 			<div class="table-responsive cart_info">
@@ -50,7 +50,7 @@
 								?>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href="{{URL::to('/delete-cart/'.$v_content->rowId)}}"><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="{{URL::to('/delete-gio-hang/'.$v_content->rowId)}}"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 						@endforeach
@@ -59,7 +59,7 @@
 				</table>
 			</div>
 		</div>
-	</section> <!--/#cart_items-->
+	</section> /#cart_items
 
 	<section id="do_action">
 		<div class="container">
@@ -135,7 +135,7 @@
 				</div>
 			</div>
 		</div>
-	</section><!--/#do_action-->
+	</section>/#do_action
 	
 
 

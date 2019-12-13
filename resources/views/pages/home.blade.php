@@ -2,16 +2,16 @@
 @section('content')
 <div class="features_items"><!--features_items-->
                         <h2 class="title text-center">Sản phẩm mới</h2>
-                        <?php  foreach($all_product as $key=>$pro){ ?>
-                        <a href="{{URL::to('chi-tiet-san-pham/'.$pro->product_id)}}"> 
+                        <?php  foreach($all_sanpham as $key=>$sp){ ?>
+                        <a href="{{URL::to('chi-tiet-san-pham/'.$sp->ma_sanpham)}}"> 
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="{{URL::to('public/upload/product/'.$pro->product_image)}}"  alt="" />
-                                            <h2>{{($pro->product_price).' '.'VND'}}</h2>
-                                            <p>{{$pro->product_name}}</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                                            <img src="{{URL::to('public/upload/product/'.$sp->hinh_sanpham)}}"  alt="" />
+                                            <h2>{{($sp->gia_sanpham).' '.'VND'}}</h2>
+                                            <p>{{$sp->ten_sanpham}}</p>
+                                            <a href="{{URL::to('/save-gio-hang/'.$sp->ma_sanpham)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
                                         </div>
                                 </div>       
                             </div>
