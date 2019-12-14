@@ -29,7 +29,7 @@ class LoaiSanPham extends Controller
     	$data['trangthai_loai']=$request->trangthai_loaisp;
     	DB::table('tbl_loaisp')->insert($data);
         session::put('message','Thêm danh mục thành công');
-        return Redirect::to('/add-category-product');
+        return Redirect::to('/add-loai-san-pham');
     }
     public function edit_loaisp($ma_loaisp)
     {
@@ -46,7 +46,7 @@ class LoaiSanPham extends Controller
 
         DB::table('tbl_loaisp')->where('ma_loai',$ma_loaisp)->update($data);
         session::put('message','Cập nhật danh mục thành công');
-        return Redirect::to('/all-category-product');
+        return Redirect::to('/all-loai-san-pham');
 
     }
     public function delete_loaisp( $ma_loaisp)
@@ -54,7 +54,7 @@ class LoaiSanPham extends Controller
 
         DB::table('tbl_loaisp')->where('ma_loai',$ma_loaisp)->delete();
         session::put('message','Xóa danh mục thành công');
-        return Redirect::to('/all-category-product');
+        return Redirect::to('/all-loai-san-pham');
     }
 
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>Home | Trà sữa-Online</title>
     <link href="{{asset('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
@@ -57,7 +57,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="{{('public/frontend/images/logo.png')}}" alt="" /></a>
+                            <a href="index.html"><img width="100" height="100" src="{{('public/frontend/images/logo12.jpg')}}" alt="" /></a>
                         </div>
                         <div class="btn-group pull-right">
                             <div class="btn-group">
@@ -86,11 +86,11 @@
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                                <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                <li><a href="{{URL::to('/show-cart')}}"><i class="fa fa-shopping-cart"></i> Gio hang</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i> Tài khoản</a></li>
+                                <li><a href="#"><i class="fa fa-star"></i> Danh sách</a></li>
+                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Kiểm tra</a></li>
+                                <li><a href="{{URL::to('/show-gio-hang')}}"><i class="fa fa-shopping-cart"></i>Giỏ hàng</a></li>
+                                <li><a href="login.html"><i class="fa fa-lock"></i> Đăng nhập</a></li>
                             </ul>
                         </div>
                     </div>
@@ -122,15 +122,19 @@
                                 <li class="dropdown"><a href="#">Tin tức<i class="fa fa-angle-down"></i></a>
                                
                                 </li> 
-                                <li><a href="404.html">Giỏ hàng</a></li>
+                                <li><a href="#">Giỏ hàng</a></li>
                                 <li><a href="contact-us.html">Liên hệ</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-3">
+                        <form action="{{URL::to('/tim-kiem')}}" method="POST">
+                            {{csrf_field()}}
                         <div class="search_box pull-right">
-                            <input type="text" placeholder="Search"/>
+                            <input type="text" name="keywords_submit"/>
+                            <input type="submit" style="margin-top:0;color:#666" name="search_items" class="btn btn-primary btn-sm" value="Tìm kiếm">
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -151,39 +155,39 @@
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
+                                    <h1><span>Trà sữa</span>-ONLINE</h1>
                                     <h2>Free E-Commerce Template</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
+                                    <img src="{{('public/frontend/images/bn1.jpg')}}" class="girl img-responsive" alt="" />
+                             
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
+                                    <h1><span>Trà sữa</span>-ONLINE</h1>
                                     <h2>100% Responsive Design</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/girl2.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
+                                    <img src="{{('public/frontend/images/bn1.jpg')}}" class="girl img-responsive" alt="" />
+                                   
                                 </div>
                             </div>
                             
                             <div class="item">
                                 <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
+                                    <h1><span>Trà sữa</span>-ONLINE</h1>
                                     <h2>Free Ecommerce Template</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/girl3.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{('public/frontend/images/pricing.png')}}" class="pricing" alt="" />
+                                    <img src="{{('public/frontend/images/bn3.png')}}" class="girl img-responsive" alt="" />
+                                 
                                 </div>
                             </div>
                             

@@ -1,8 +1,10 @@
 @extends('welcome')
 @section('content')
 <div class="features_items"><!--features_items-->
-                        <h2 class="title text-center">Sản phẩm mới</h2>
+                        <h2 class="title text-center">Sản phẩm mới</h2>      
+
                         <?php  foreach($all_sanpham as $key=>$sp){ ?>
+                          
                         <a href="{{URL::to('chi-tiet-san-pham/'.$sp->ma_sanpham)}}"> 
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">

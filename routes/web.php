@@ -16,6 +16,7 @@ Route::get('/trang-chu','HomeController@index');
 //Danh muc
 //Route::get('/danh-muc-san-pham/{ma_loai}','LoaiSanPham@show_loai');
 Route::get('/chi-tiet-san-pham/{ma_sanpham}','SanPhamController@chitiet_sanpham');
+Route::post('/tim-kiem','HomeController@timkiem');
 
 
 

@@ -49,12 +49,12 @@ class SanPhamController extends Controller
             $data['hinh_sanpham']=$hinh_moi;
             DB::table('tbl_sanpham')->insert($data);
             session::put('message','Them san pham thanh cong');
-            return Redirect::to('/add-product');
+            return Redirect::to('/add-san-pham');
         }
         $data['hinh_sanpham']='';
         DB::table('tbl_sanpham')->insert($data);
         session::put('message','Ban chua them hinh anh');
-        return Redirect::to('/add-product');
+        return Redirect::to('/add-san-pham');
 
  
     }
@@ -84,12 +84,12 @@ class SanPhamController extends Controller
             $data['hinh_sanpham']=$hinh_moi;
             DB::table('tbl_sanpham')->where('ma_sanpham',$ma_sanpham)->update($data);
             session::put('message','Cập nhật thành công');
-            return Redirect::to('/all-product');
+            return Redirect::to('/all-san-pham');
         }
          
         DB::table('tbl_sanpham')->where('ma_sanpham',$ma_sanpham)->update($data);
         session::put('message','Cập nhật thành công');
-        return Redirect::to('/all-product');
+        return Redirect::to('/all-san-pham');
 
 
     }
@@ -98,7 +98,7 @@ class SanPhamController extends Controller
 
         DB::table('tbl_sanpham')->where('ma_sanpham',$ma_sanpham)->delete();
         session::put('message','Xóa sản phẩm thành công');
-        return Redirect::to('/all-product');
+        return Redirect::to('/all-san-pham');
     }
     //customer pages
     public function chitiet_sanpham($ma_sanpham)
